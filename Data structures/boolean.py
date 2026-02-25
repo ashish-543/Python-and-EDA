@@ -164,7 +164,7 @@ b = 555
 print(a == b) # True
 print(a is b) # True
 
-# But if = operator is used to assig the values of one variable to another then same object_id is assigned to both variables even if they are comples data types
+# But if = operator is used to assign the values of one variable to another then same object_id is assigned to both variables even if they are complex data types
 a = [1,2,3]
 b = a
 print(a == b) # True
