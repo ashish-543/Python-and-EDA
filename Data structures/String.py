@@ -104,6 +104,9 @@ print(phone.startswith('+48')) # True
 print(phone.endswith('345')) # True
 print('-' in phone) # True
 
+# To check multiple ends with value use () inside endswith() inorder to check for multiple values
+email.endswith(('.com', '.org', '.net'))
+
 
 # Partial Extraction Using find()
 # Use find to locate where the number actually starts ignoring the country code.
