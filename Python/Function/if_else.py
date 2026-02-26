@@ -77,3 +77,39 @@ elif not (password[0].isalnum() and password[-1].isalnum()):
     print('Password must start and end with letter or number')
 else:
     print('Password is valid')
+
+
+print('-' * 20)
+# Inline Ifelse
+# Used for simple condition check
+# If condition to be checked is complex then use normal if-else statement
+grade = 'A' if Score >= 90 else 'B' if Score >= 89 else 'C'
+print(grade)
+
+
+print('-' * 20)
+# Match-Case
+# Print the short form of countries
+
+country = 'France'
+
+match country:
+    case 'Germany':
+        print('DE')
+    
+    case 'USA':
+        print('US')
+    
+    case 'Australia':
+        print('AU')
+
+    case 'Nepal':
+        print('NP')
+
+    case 'China':
+        print('CN')
+
+    # For default nomatch condition, use undersore
+    case _:
+        print('Unknown Country')
+    
