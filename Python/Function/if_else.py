@@ -13,6 +13,7 @@ elif Score >= 60 or submitted_score:
     print('D')
 else:
     print('F')
+# output: F
 
 # Check for email the following conditions:
 # 1. Email must not be empty.
@@ -38,6 +39,8 @@ elif not (email[0].isalnum() and email[-1].isalnum()):
     print('Email doesnot start or end with alphanumeric character')
 else:
     print('Email is perfectly fine')
+# output: Email is perfectly fine
+
 
 
 print('-' * 20)
@@ -77,6 +80,8 @@ elif not (password[0].isalnum() and password[-1].isalnum()):
     print('Password must start and end with letter or number')
 else:
     print('Password is valid')
+# output: uppercase: 1 lowercase: 4
+#  Password id valid
 
 
 print('-' * 20)
@@ -84,7 +89,7 @@ print('-' * 20)
 # Used for simple condition check
 # If condition to be checked is complex then use normal if-else statement
 grade = 'A' if Score >= 90 else 'B' if Score >= 89 else 'C'
-print(grade)
+print(grade) # output: C
 
 
 print('-' * 20)
@@ -112,4 +117,4 @@ match country:
     # For default nomatch condition, use undersore
     case _:
         print('Unknown Country')
-    
+    # output: Unknown Country
