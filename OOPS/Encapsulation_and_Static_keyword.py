@@ -371,6 +371,7 @@ for i in dict1:
 # In the above atm code, add a feature which keeps a track of number of users
 class Atm:
 
+    # Private static attribute
     __user_number = 0
     # Constructor
     def __init__(self):
