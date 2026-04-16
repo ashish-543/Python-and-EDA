@@ -152,3 +152,48 @@ for file in files:
 
 os.rmdir('another folder')
 
+#----------------------------------------------------------------------------------------------------------
+# 8. Changing present working directory
+
+print(os.getcwd()) # D:\Python code
+
+# Read a file named path.txt inside folder named another inside pwd
+
+with open('another/path.txt', 'r') as f:
+    print(f.read()) # This is inside path.txt
+
+# Here the cwd is:
+print(os.getcwd()) # D:\Python code
+
+# We can change the current working directory to another folder
+os.chdir('another')
+print(os.getcwd()) # D:\Python code\another
+
+# So the file reading code becomes
+with open('path.txt', 'r') as f: # This is inside path.txt
+    print(f.read())
+
+
+# Now to move one step above in the hierarchy
+os.chdir('..')
+print(os.getcwd()) # D:\Python code
+
+# Now move to folder2 which is inside folder1 which is inside new inside pwd
+os.chdir('new/folder1/folder2')
+print(os.getcwd()) # D:\Python code\new\folder1\folder2
+
+# Now to move back to Python code
+os.chdir('../../..')
+print(os.getcwd()) # D:\Python code
+
+
+
+
+
+
+
+
+
+
+
+
