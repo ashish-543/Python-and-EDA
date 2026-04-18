@@ -12,7 +12,7 @@ def configure_logger():
     logging.config.dictConfig(config)
 
 def main():
-    logger.error("This is error message: %s %d", 'argument', 100) # Using f{} is not recommended so use %
+    logger.error("This is error message: %s %d", 'argument', 100) # Using f{} is not recommended so use % while passing arguments in the log message
     logger.warning("This is warning message: %d %s", 101, 'parameter')
     logger.debug("This is debug message")
 
