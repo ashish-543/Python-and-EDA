@@ -1,4 +1,5 @@
 import logging
+# Although you can configure logger using this method, it is not recommended
 
 import sys
 
