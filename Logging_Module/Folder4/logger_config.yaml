@@ -1,0 +1,25 @@
+---
+version: 1
+disable_existing_loggers: true
+
+formatters:
+  file_formatter:
+    style: "%"
+    format: "%(asctime)s | %(name)s | %(levelname)s | %(funcName)s | %(message)s"
+
+handlers:
+  file_handler:
+    formatter: file_formatter
+    class: logging.FileHandler
+    filename: log/file_log.log # Here, the folder should exist beforehand but it creates new file for log storage
+    mode: a
+
+root:
+  level: DEBUG
+  handlers: [file_handler]
+
+loggers:
+  app:
+    level: INFO
+    handlers: []
+    propagate: true
