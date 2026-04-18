@@ -11,7 +11,6 @@ def configure_loggers():
     
     logging.config.dictConfig(config) # Using dictconfig to configure the loggers beacuse the logger configuration has to be in dict format
 
-logging.lastResort = True
 
 def main():
     logger.debug('This is debug message')
@@ -25,8 +24,6 @@ if __name__ =='__main__':
 # Output:
 # SIMPLE FORMATTER: 2026-04-18 12:51:45,568 | app | INFO | This is info message
 # SIMPLE FORMATTER: 2026-04-18 12:51:45,568 | app | WARNING | This is warning message
-
-
 
 
 
