@@ -1,0 +1,4 @@
+2026-04-18 19:14:31,840 | app | ERROR | main | This is error message: argument 100
+2026-04-18 19:14:31,840 | app | WARNING | main | This is warning message: 101 parameter
+2026-04-18 19:15:31,068 | app | ERROR | main | This is error message: argument 100
+2026-04-18 19:15:31,068 | app | WARNING | main | This is warning message: 101 parameter
