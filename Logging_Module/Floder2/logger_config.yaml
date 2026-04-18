@@ -1,0 +1,40 @@
+---
+version: 1 # this is needed, and always 1 (at least at this time)
+disable_existing_loggers: true # turn off any existing loggers
+                               # this is the default, so don't actually need this
+
+# Define one or more formaters
+# You can name them whatever you want, here 'simple' is choose
+formatters:
+  simple:  # Name
+    style: "%" # The style parameter in a logging formatter defines the syntax used for the format string, determining how placeholders are interpolated within log messages. % can also be used
+    format: "SIMPLE FORMATTER: %(asctime)s | %(name)s | %(levelname)s | %(message)s"
+    # These values are present in the log_record
+
+# Define one or more handlers
+# You can name them whatever you want, here 'console' is choosen
+handlers:
+  console:
+    formatter: simple 
+    class: logging.StreamHandler
+    stream: ext://sys.stdout # Here stdout is used inplace of stderr. By default it goes to stderr
+    # ext:// tells Python: “Go import this object from somewhere external”
+    # So you cannot just use stdout or stderr
+
+# Configure root and app logger
+# The root logger is created outside the loggers
+
+root:
+  level: CRITICAL
+  handlers: [console]
+
+loggers:
+  app:
+    level: INFO
+  # Doesnot have any handlers so there will be propagation to upper levels i.e root
+  # It is a better practice to instead write the below code for better clarity:
+    # handlers: []
+    # propagate: true/false
+
+
+
