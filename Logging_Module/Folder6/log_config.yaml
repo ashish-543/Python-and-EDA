@@ -1,0 +1,40 @@
+---
+version: 1
+disable_existing_loggers: true
+
+formatters:
+  file_formatter:
+    style: "%"
+    format: '{"Time": "%(asctime)s", "LoggerName": "%(name)s", "Level": "%(levelname)s", "Message": "%(message)s"}'
+  console_formatter:
+    style: "%"
+    format: "%(asctime)s | %(name)s | %(levelname)s | %(funcName)s | %(message)s"
+
+handlers:
+  rotating_file_handler:
+    formatter: file_formatter
+    class: logging.handlers.RotatingFileHandler
+    filename: log/app_log.log
+    mode: a
+    maxBytes: 1000
+    backupCount: 2
+  console_handler:
+    level: WARNING # Since only the logs >= warning level are shown in the console
+    formatter: console_formatter
+    class: logging.StreamHandler
+    stream: ext://sys.stderr # Default is stderr
+
+root:
+  level: DEBUG
+  handlers: [rotating_file_handler, console_handler]
+
+loggers:
+  app:
+    level: INFO
+    handlers: []
+    propagate: true
+
+
+
+
+
