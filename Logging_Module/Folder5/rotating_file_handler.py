@@ -32,7 +32,7 @@ if __name__ == "__main__":
 # 5. After which the logs of app_log.log are pushed to app_log.log.1 and the previous logs of app_log.log.1 are pushed to
 #    another new file named app_log.log.2
 # 6. Then the app_log.log contains the most recent logs, app_log.log.1 contains second most recent logs and so on
-# 7. Once the new logs exceed the space in each files, the old logs are discarded
+# 7. Once the new logs exceed the space in each files, the old logs are discarded from the last backup file which is the app_log.log.3 file
 
 
 # In the above example, the file app_log.log.3 has logs starting from 72:
