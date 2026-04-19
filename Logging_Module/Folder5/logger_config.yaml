@@ -1,0 +1,28 @@
+---
+version: 1
+disable_existing_loggers: true
+
+formatters:
+  file_formatter:
+    style: "%"
+    format: "%(asctime)s | %(name)s | %(funcName)s | %(levelname)s | %(module)s | %(message)s"
+  
+handlers:
+  rotating_file_handler:
+    formatter: file_formatter
+    class: logging.handlers.RotatingFileHandler # Rotating_file_handler is inside logging.handlers not directly inside logging
+    filename: log/app_log.log
+    mode: a
+    maxBytes: 1000 # Maximum size of the file 
+    backupCount: 3 # If the file exceeds its size, 3 backup files and 1 original file are created
+
+root:
+  level: DEBUG
+  handlers: [rotating_file_handler]
+
+loggers:
+  app:
+    level: INFO
+    handlers: []
+    propagate: true
+
