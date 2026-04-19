@@ -1,0 +1,4 @@
+2026-04-19 10:48:30,548 | app | main | WARNING | rotating_file_handler | This is warning message with number: 96
+2026-04-19 10:48:30,548 | app | main | WARNING | rotating_file_handler | This is warning message with number: 97
+2026-04-19 10:48:30,548 | app | main | WARNING | rotating_file_handler | This is warning message with number: 98
+2026-04-19 10:48:30,548 | app | main | WARNING | rotating_file_handler | This is warning message with number: 99
