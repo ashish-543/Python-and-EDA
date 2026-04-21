@@ -47,7 +47,7 @@ class CustomFilter(logging.Filter): # It inherits from logging.filter
         return(
             self.arg_name # -> self.arg_name == "my_arg" # always truthy (a string) i.e it only checks if arg_name is present inside filter or not
             and self.arg_threshold # -> self.arg_threshold == 100, These values are fixed for the filter, not per log record
-            and hasattr(record, self.arg_name) # -> hasattr(record, "my_arg"). 
+            and hasattr(record, self.arg_name) # -> hasattr(record, "my_arg"). = False in first message, = True in second message
             and getattr(record, self.arg_name) > self.arg_threshold # -> getattr() = None in first message, = 100 in second message
         )
     
