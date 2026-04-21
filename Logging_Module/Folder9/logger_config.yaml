@@ -1,0 +1,41 @@
+---
+version: 1
+disable_existing_loggers: true
+
+formatters:
+  simple:
+    style: "%"
+    format: "%(asctime)s | %(name)s | %(levelname)s | %(funcName)s | %(message)s"
+  special:
+    style: "%"
+    format: "Special Handling: %(asctime)s | %(name)s | %(levelname)s | %(message)s"
+
+filters:
+  'my_filter': # Write the name of the filter inside ''
+    '()': __main__.CustomFilter # # () simply tells logging system that this is a callable.
+    # This is meant to be a hint to the logging system that it should instantiate the class given inside the (), and pass the configuration
+    # So, () tells the logging system to execute the constructor of the above mentiond class and instantiate the attributes
+    'arg_name': "my_arg"
+    'arg_threshold': 100
+
+handlers:
+  console:
+    formatter: simple
+    class: logging.StreamHandler
+    stream: ext://sys.stdout
+  special_handler:
+    level: WARNING
+    formatter: special
+    class: logging.StreamHandler
+    stream: ext://sys.stdout
+    filters: ['my_filter'] # Filter can also be assigned to loggers
+
+root:
+  level: DEBUG
+  handlers: [console, special_handler]
+
+loggers:
+  app:
+    level: INFO
+    handlers: []
+    propagate: true
