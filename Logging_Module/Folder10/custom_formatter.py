@@ -2,7 +2,6 @@
 
 import logging
 import logging.config
-from tokenize import String
 import yaml
 import json
 from datetime import datetime, UTC
@@ -76,7 +75,7 @@ class JSONFormatter(logging.Formatter):
             if key not in standard_fields:
                 log_dict[key] = value
 
-        return json.dumps(log_dict) # json.dump() -> writes JSON directly to file
+        return json.dumps(log_dict, default = str) # json.dump() -> writes JSON directly to file
                                     # json.dumps() -> returns a JSON string
     
 
