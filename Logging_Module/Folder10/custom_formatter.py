@@ -43,7 +43,7 @@ class JSONFormatter(logging.Formatter):
             "funcName": record.funcName,
             "exceptionInfo": (
                 self.formatException(record.exc_info) # FormatException is inside logging.Formatter and since we are inheriting from it, we can directly use it.
-                if record.exc_info # exec_info is inside record i.e in the LogRecord
+                if record.exc_info # exc_info is inside record i.e in the LogRecord. Formatter is used since record.exc_info is not JSON serializable
                 else None
             ),
             "stackTrace": (
