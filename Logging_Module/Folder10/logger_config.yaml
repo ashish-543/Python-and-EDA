@@ -1,0 +1,28 @@
+---
+version: 1
+
+formatters:
+  json_formatter:
+    '()': __main__.JSONFormatter
+
+
+handlers:
+  console:
+    formatter: json_formatter
+    class: logging.StreamHandler
+    stream: ext://sys.stdout
+  file_handler:
+    formatter: json_formatter
+    class: logging.handlers.RotatingFileHandler
+    filename: log/app_log.log
+    mode: a
+    maxBytes: 2000
+    backupCount: 2
+
+loggers:
+  root:
+    level: DEBUG
+    handlers: [console, file_handler]
+
+  app:
+    level: INFO
