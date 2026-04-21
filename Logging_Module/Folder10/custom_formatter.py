@@ -12,7 +12,7 @@ logger = logging.getLogger("app")
 def serialize_local_timestamp(t: float) -> str: # input looks like: 1713537000.123 which is called Unix timestamp so it doesnot have any timezone 
     dt = datetime.fromtimestamp(t, UTC) # Convert timestamp → datetime in UTC format. If .fromtimestamp(t) is used then timestamp -> local datetime
     # output will be somethig like: 2026-04-19 14:30:00.123456+00:00
-    return dt.strftime("%Y-%m-%dT%H%M%S.%fZ") # Format datetime → string
+    return dt.strftime("%Y-%m-%dT%H:%M:%S.%fZ") # Format datetime → string
 
 
 class JSONFormatter(logging.Formatter):
